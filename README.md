@@ -18,7 +18,7 @@ Build the image using:
 
 Deploy the service using the provided bare-minimum deployment.yaml
 
-``` kubectl apply -f ./Deploy/* ```
+``` kubectl apply -f ./deploy/* ```
 
 check status of pods via:
 

@@ -1,10 +1,10 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 import logging
-from src.app.api.v1 import endpoints
-from src.app.api.health import health_router
-from src.app.api.health.health_router import set_app_ready
-from src.app.core.logging_config import setup_logging
+from app.api.v1 import endpoints
+from app.api.health import health_router
+from app.api.health.health_router import set_app_ready
+from app.core.logging_config import setup_logging
 
 logger = logging.getLogger(__name__)
 

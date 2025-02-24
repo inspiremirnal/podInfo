@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
-from src.app.services.system_info import SystemInfoService
+from app.services.system_info import SystemInfoService
 import logging
 
 router = APIRouter()

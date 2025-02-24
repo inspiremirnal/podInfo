@@ -4,6 +4,7 @@ metadata:
   name: system-info-service
   labels:
     app: system-info-service
+  namespace: system-info-service
 spec:
   replicas: 1
   selector:

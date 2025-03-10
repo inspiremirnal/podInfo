@@ -5,15 +5,16 @@ import logging
 logger = logging.getLogger(__name__)
 router = APIRouter()
 
-# Global flag to track application startup status
-is_app_ready: bool = False
+is_app_ready = False  # Set to True when application has fully started
+
 
 
 def set_app_ready():
     """Called when application has fully started"""
     global is_app_ready
+    logger.info("Application marked as ready : True", extra={"event": "app_ready"})
     is_app_ready = True
-    logger.info("Application marked as ready", extra={"event": "app_ready"})
+    logger.info(f"Application marked as ready : {is_app_ready}", extra={"event": "app_ready"})
 
 
 @router.get("/local")

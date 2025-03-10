@@ -14,7 +14,7 @@ Stupid python based API to display Pod and Node information in a nice HTML page.
 ```
 Build the image using:
 
-```docker build -t system-info:latest -f Dockerfile .```
+```docker build -t system-info:1.0.0 -f Dockerfile .```
 
 Deploy the service using the provided bare-minimum deployment.yaml
 
@@ -33,7 +33,7 @@ Open a Browser tab and then access the url as below :
 
 ### Production 
 
-Utilize the CI/CD process to build and deploy the service to your cluster.
+Image is publicly available at dockerhub `inspiremirnal/system-info`
 
 #### Example
 

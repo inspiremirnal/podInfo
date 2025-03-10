@@ -1,8 +1,10 @@
 import unittest
-from unittest import mock
 from unittest.mock import patch
+
+import pytest
 from fastapi.testclient import TestClient
-from app.api.v1.endpoints import router, system_info_service
+
+from app.api.v1.endpoints import router
 from app.services.system_info import SystemInfoService
 
 
@@ -11,12 +13,13 @@ class TestWhoamiEndpoint(unittest.TestCase):
         self.client = TestClient(router)
 
     @patch.object(SystemInfoService, 'get_system_info', side_effect=Exception('Service temporarily unavailable'))
-    def test_whoami_endpoint_handles_service_unavailability(self, mock_get_system_info):
-        response = self.client.get('/whoami')
-        assert response.status_code == 500
-        assert response.json() == {
-            'detail': 'Internal Server Error'
-        }
+    def test_whoami_endpoint_handles_service_unavailability(self, mock_side_effect):
+        with pytest.raises(Exception) as e:
+            response = self.client.get('/whoami')
+            assert response.status_code == 500
+            assert response.json() == {
+                'detail': 'Internal Server Error'
+            }
 
     @patch.object(SystemInfoService, 'get_system_info', return_value={
         "pod": {

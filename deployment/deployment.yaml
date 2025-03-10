@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: system-info
-        image: system-info:latest
+        image: system-info:1.0.0
         imagePullPolicy: Never
         ports:
         - containerPort: 8080

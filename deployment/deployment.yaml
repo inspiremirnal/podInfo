@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: system-info
-        image: inspiremirnal/system-info:1.0.0
+        image: inspiremirnal/system-info:1.0.1
         imagePullPolicy: Never
         ports:
         - containerPort: 8080

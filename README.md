@@ -1,5 +1,5 @@
 # podInfo
-Stupid python based API to display Pod and Node information in a nice HTML page.
+A lightweight Python API that renders Kubernetes Pod and Node data in a clean web interface.
  - exposes /v1/whoami to display the pod and node info.
  - exposes /health/local for kubelet health checks.
 
@@ -34,6 +34,8 @@ Open a Browser tab and then access the url as below :
 ### Production 
 
 Image is publicly available at dockerhub `inspiremirnal/system-info`
+Deploy using `kubectl apply -f deployment/*`
+Access : `kubectl port-forward deployments/system-info-service 8080:8080`
 
 #### Example
 
